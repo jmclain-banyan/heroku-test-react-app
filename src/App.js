@@ -1,7 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 function App() {
+  const test = () => {
+    let response = '';
+    axios.get('/api').then(res => {
+      console.log(res)
+      response = 'success'
+    })
+    .catch(err => {
+      console.log(err)
+      response = 'fail'
+    })
+    return response
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -9,14 +22,7 @@ function App() {
         <p>
           Hello Universe!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          <button onClick={test}>click</button>
       </header>
     </div>
   );
