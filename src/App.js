@@ -6,7 +6,7 @@ import { proxy, requestBodyHeader } from './config';
 function App() {
   const test = () => {
     let response = '';
-    axios.get(`${proxy}/api`).then(res => {
+    axios.get(`${proxy}/api`, requestBodyHeader.headers).then(res => {
       console.log(res)
       response = 'success'
     })
