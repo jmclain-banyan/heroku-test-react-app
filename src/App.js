@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-import { proxy } from './config';
+import { proxy, requestBodyHeader } from './config';
 
 function App() {
   const test = () => {
