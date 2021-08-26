@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import { proxy } from './config';
 
 function App() {
   const test = () => {
     let response = '';
-    axios.get('/api').then(res => {
+    axios.get(`${proxy}/api`).then(res => {
       console.log(res)
       response = 'success'
     })
